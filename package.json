@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/varya/react-mapbox#readme",
   "devDependencies": {
+    "babel": "^5.8.23"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
