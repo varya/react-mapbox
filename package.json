@@ -1,0 +1,28 @@
+{
+  "name": "react-mapbox",
+  "version": "0.1.0",
+  "description": "React component for mapbox",
+  "main": "dist/react-mapbox.js",
+  "scripts": {
+    "compile": "babel -d dist/ src/",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-mapbox/react-mapbox.git"
+  },
+  "keywords": [
+    "react",
+    "mapbox"
+  ],
+  "author": "Varya Stepanova <mail@varya.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/varya/react-mapbox/issues"
+  },
+  "homepage": "https://github.com/varya/react-mapbox#readme",
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}
