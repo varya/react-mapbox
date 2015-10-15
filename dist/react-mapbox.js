@@ -32,13 +32,37 @@ var MapBox = (function (_React$Component) {
   }
 
   _createClass(MapBox, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      L.mapbox.accessToken = this.props.token;
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount(argument) {
+      var props = this.props;
+
+      var mapId = props.mapId || props.src || "mapbox.streets";
+
+      var options = {};
+      var ownProps = ['mapId', 'onMapCreated'];
+      for (var k in props) {
+        if (props.hasOwnProperty(k) && ownProps.indexOf(k) === -1) {
+          options[k] = props[k];
+        }
+      }
+
+      console.log(this.refs);
+      var map = L.mapbox.map(_reactDom2['default'].findDOMNode(this), mapId, options);
+    }
+  }, {
     key: 'render',
     value: function render() {
-      return _react2['default'].createElement(
-        'h1',
-        null,
-        'Test'
-      );
+      var mapStyle = {
+        width: '100%',
+        height: '100%'
+      };
+
+      return _react2['default'].createElement('div', { className: 'MapBox', style: mapStyle });
     }
   }]);
 
