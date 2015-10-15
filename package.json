@@ -4,6 +4,7 @@
   "description": "React component for mapbox",
   "main": "dist/react-mapbox.js",
   "scripts": {
+    "dev": "./node_modules/babel/bin/babel.js src/MapBox.js -o dist/react-mapbox.js -w",
     "build:dist": "./node_modules/babel/bin/babel.js src/MapBox.js -o dist/react-mapbox.js",
     "build": "npm run build:dist",
     "prepublish": "npm run build"
@@ -32,7 +33,5 @@
     "react-dom": "^0.14.0"
   },
   "dependencies": {
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0"
   }
 }

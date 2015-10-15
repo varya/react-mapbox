@@ -2,9 +2,34 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 export default class MapBox extends React.Component {
+  componentWillMount () {
+    L.mapbox.accessToken = this.props.token;
+  }
+  componentDidMount (argument) {
+    var props = this.props;
+
+    var mapId = props.mapId || props.src || "mapbox.streets";
+
+    var options = {};
+    var ownProps = ['mapId', 'onMapCreated'];
+    for (var k in props) {
+      if (props.hasOwnProperty(k) && ownProps.indexOf(k) === -1) {
+        options[k] = props[k];
+      }
+    }
+
+    console.log(this.refs);
+    var map = L.mapbox.map(ReactDOM.findDOMNode(this), mapId, options);
+  }
   render () {
+    var mapStyle = {
+      width: '100%',
+      height: '100%'
+    };
+
     return (
-        <h1>Test</h1>
-    )
+      <div className="MapBox" style={mapStyle}>
+      </div>
+    );
   }
 }
