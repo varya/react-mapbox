@@ -18,7 +18,6 @@ export default class MapBox extends React.Component {
       }
     }
 
-    console.log(this.refs);
     var map = L.mapbox.map(ReactDOM.findDOMNode(this), mapId, options);
   }
   render () {
